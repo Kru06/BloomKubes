@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#344c3d",
+                    "primary-container": "#6b9e82",
+                    "secondary": "#4b6454",
+                    "secondary-fixed-dim": "#b1cdb9",
+                    "on-primary-container": "#003320",
+                    "on-tertiary-fixed-variant": "#215033",
+                    "on-error-container": "#93000a",
+                    "on-surface": "#1d1c17",
+                    "primary": "#36684f",
+                    "outline": "#717973",
+                    "on-surface-variant": "#414943",
+                    "inverse-on-surface": "#f5f0e8",
+                    "surface-container-low": "#f8f3eb",
+                    "surface-bright": "#fef9f1",
+                    "surface-container-highest": "#e7e2da",
+                    "error-container": "#ffdad6",
+                    "primary-fixed-dim": "#9dd2b4",
+                    "surface-container-high": "#ece8e0",
+                    "surface-container": "#f2ede5",
+                    "on-background": "#1d1c17",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed": "#00210e",
+                    "tertiary-fixed": "#bbefc7",
+                    "surface": "#fef9f1",
+                    "outline-variant": "#c0c9c1",
+                    "on-primary-fixed-variant": "#1d5038",
+                    "surface-variant": "#e7e2da",
+                    "on-secondary-fixed": "#072013",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#002113",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#9dd2b4",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-container": "#4f6858",
+                    "secondary-container": "#cae7d2",
+                    "surface-tint": "#36684f",
+                    "on-tertiary-container": "#00341a",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#ded9d2",
+                    "tertiary-fixed-dim": "#a0d2ac",
+                    "tertiary-container": "#6e9e7b",
+                    "inverse-surface": "#32302b",
+                    "secondary-fixed": "#cde9d5",
+                    "tertiary": "#3a6849",
+                    "background": "#fef9f1",
+                    "primary-fixed": "#b9efcf"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader", "serif"],
+                    "body": ["Manrope", "sans-serif"],
+                    "label": ["Manrope", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0 20px 40px rgba(74, 60, 50, 0.06);
+        }
+        .text-ink { color: #4A3C32; }
+        .bg-sage-overlay { background: linear-gradient(135deg, rgba(54, 104, 79, 0.85) 0%, rgba(107, 158, 130, 0.7) 100%); }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-secondary-container">
+<!-- TopNavBar -->
+<nav class="w-full top-0 z-50 bg-white/80 dark:bg-background-dark/80 transition-colors duration-300 backdrop-blur-[12px] sticky border-b border-[#c0c9c1]/20">
+<div class="flex justify-between items-center px-8 py-4 w-full max-w-screen-2xl mx-auto">
+<div class="font-['Newsreader'] text-xl md:text-2xl font-bold text-[#4A3C32]">Bloomkubes</div>
+<div class="hidden lg:flex items-center space-x-8">
+<a class="text-[#4A3C32]/80 hover:text-[#36684f] transition-colors font-['Newsreader'] italic text-base md:text-lg" href="#">Technology</a>
+<a class="text-[#36684f] border-b-2 border-[#36684f] pb-1 font-semibold font-['Newsreader'] italic text-base md:text-lg" href="#">About Us</a>
+<a class="text-[#4A3C32]/80 hover:text-[#36684f] transition-colors font-['Newsreader'] italic text-base md:text-lg" href="#">Work with Us</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label font-medium hover:scale-[1.02] transition-transform text-xs">Contact Us</button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative h-[650px] md:h-[750px] w-full flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Lush conservatory" class="w-full h-full object-cover" data-alt="expansive botanical conservatory with glass ceiling, lush tropical ferns and vines bathed in soft morning light through architectural frames" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpXT87-l_sLDnffMB9FUeK-1Hz-IgAyvEZWfG6-OG0xGFWCyAvAHbJ1zL_RTH0NXK054dWBQgI4rfLAhCWWe4_fCvuu8-4957RZWCovp28XcLH9YMcKG4e8bkGi-uERpupHEacveIFvkslWWRIYE3lAprM91BGLo3vJYAgCWmUTBuqUb_2x5yD_NCgMWBqggWzf2zfS4miITEr9tC3sJ9URmRC7b0vLRwhgjdFlT4CZMwnN74qT7xYl69r9QwTYwn4AzOXpgLZuN6z"/>
+<div class="absolute inset-0 bg-sage-overlay"></div>
+</div>
+<div class="relative z-10 w-full max-w-screen-2xl mx-auto px-8 md:px-16">
+<div class="max-w-3xl">
+<span class="font-label text-on-primary tracking-[0.2em] uppercase text-[10px] md:text-xs mb-6 block">Our Botanical Ethos</span>
+<h1 class="font-headline italic text-white text-4xl md:text-5xl lg:text-6xl leading-tight mb-8">Nurturing the <br/>Living Archive.</h1>
+<p class="font-body text-on-primary/90 leading-relaxed max-w-xl text-sm md:text-base">
+                        Between the rows of heritage seedlings and the hum of precise climate control, we find a balance between timeless craft and future technology.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Founders Story -->
+<section class="bg-surface-container-low py-20 md:py-24 overflow-hidden">
+<div class="max-w-screen-2xl mx-auto px-8 md:px-16 grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-16 items-center">
+<div class="lg:col-span-5 space-y-8">
+<span class="font-label text-primary tracking-widest uppercase text-xs md:text-sm font-semibold">The Visionaries</span>
+<h2 class="font-headline text-ink leading-tight text-3xl md:text-4xl">Grown from a <br/>Shared Passion.</h2>
+<p class="font-body text-on-surface-variant leading-relaxed text-sm md:text-base">
+                        Founded in 2014 by Eleanor Sage and Julian Cream, the Living Archive began as a simple experiment in a reclaimed Victorian glasshouse. Today, it stands as a testament to their belief that luxury and ecology are not mutually exclusive.
+                    </p>
+<div class="space-y-4 font-body text-on-surface-variant">
+<p class="text-sm md:text-base italic">“We didn’t want to just grow plants; we wanted to curate an experience that honors the patience of nature while embracing the efficiency of the modern world.”</p>
+<p class="font-headline italic text-primary text-lg md:text-xl">— Eleanor Sage</p>
+</div>
+</div>
+<div class="lg:col-span-7 grid grid-cols-2 gap-4 md:gap-8 relative">
+<div class="mt-12">
+<div class="aspect-[3/4] bg-surface-container-highest rounded-xl overflow-hidden editorial-shadow transition-transform duration-500 hover:scale-[1.01]">
+<img alt="Eleanor Sage" class="w-full h-full object-cover" data-alt="portrait of a woman in her 40s wearing a linen shirt, smiling gently in a sun-drenched greenhouse surrounded by greenery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRWxEvrjVOjVwJYFyMSSjcOf4yKpHw5QNE_SW2tOKUIxlxRUuRsiqG9u_dLFdXl4b5aQ5NzLc6WDFuQRfgH5nL5SiehZMGbnwsU8smjQzeLhRxhisfyhzAx-nTDBQoW0gl08GcKj3MN4mSmmQ9y1WXzSQ-3R9W7-4i6CLVa05YyEvTbBYKpcCnRxzUJX_S7A-YZztKkdEO6p0DPbvVAlhPS2tWyuLuNasLPGfo_1WiAoEcxZBamMFcS7wsE-HhCLCNXziW693ioXUV"/>
+</div>
+<p class="mt-4 font-label font-bold text-ink uppercase tracking-tight text-center text-xs md:text-sm">Eleanor Sage</p>
+</div>
+<div>
+<div class="aspect-[3/4] bg-surface-container-highest rounded-xl overflow-hidden editorial-shadow transition-transform duration-500 hover:scale-[1.01]">
+<img alt="Julian Cream" class="w-full h-full object-cover" data-alt="portrait of a man in a canvas apron working with botanical specimens, warm natural side lighting in a rustic studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARhDlUG8HDJcQOsqcQHbkjE7Eta7yFf6Qp5OeVdmI6qfugL4Vfl8YawycZ7315jYEvOm8iQgtVcTo0MqG8Ip2mV_wPmaQzPM5zybIQT5ZS5_xlXQAEh_cphytNrUFpcU83RU_AXoVplPjdiIypTtjXOfTrTjI1Vlok3K-b-d9f7vWfDYjnL8RnaamciGOESjRkd5WX46r5YHsmzvhrDGyjW07XkRB8Z_cIx7zxQmy9wMFUdSdGW1YEGSo-d06aLLA3mwqubHFYgYdN"/>
+</div>
+<p class="mt-4 font-label font-bold text-ink uppercase tracking-tight text-center text-xs md:text-sm">Julian Cream</p>
+</div>
+<div class="absolute -bottom-8 -right-8 w-48 h-48 border border-outline-variant/30 rounded-full hidden md:block"></div>
+</div>
+</div>
+</section>
+<!-- Mission & Values -->
+<section class="bg-surface py-20 md:py-24">
+<div class="max-w-screen-2xl mx-auto px-8 md:px-16">
+<div class="text-center mb-16 md:mb-20">
+<h2 class="font-headline text-ink mb-6 text-3xl md:text-4xl">Rooted in Purpose</h2>
+<div class="w-24 h-px bg-outline-variant mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-0 border border-outline-variant/20 rounded-xl overflow-hidden">
+<div class="p-10 md:p-12 border-b md:border-b-0 md:border-r border-outline-variant/20 bg-surface-container hover:bg-surface-container-low transition-colors duration-300">
+<span class="material-symbols-outlined text-primary text-3xl md:text-4xl mb-6" data-icon="tempest">storm</span>
+<h3 class="font-headline text-ink mb-4 text-lg md:text-xl">Unwavering Integrity</h3>
+<p class="font-body text-on-surface-variant leading-relaxed text-sm md:text-base">
+                            Every specimen in our care is cultivated without compromise. From soil composition to harvest, we maintain the highest ethical standards in the industry.
+                        </p>
+</div>
+<div class="p-10 md:p-12 border-b md:border-b-0 md:border-r border-outline-variant/20 bg-surface-container hover:bg-surface-container-low transition-colors duration-300">
+<span class="material-symbols-outlined text-primary text-3xl md:text-4xl mb-6" data-icon="auto_awesome">auto_awesome</span>
+<h3 class="font-headline text-ink mb-4 text-lg md:text-xl">Precision Design</h3>
+<p class="font-body text-on-surface-variant leading-relaxed text-sm md:text-base">
+                            Our 'Kubes' are feats of modern engineering, designed to recreate specific microclimates with surgical accuracy while minimizing environmental footprint.
+                        </p>
+</div>
+<div class="p-10 md:p-12 bg-surface-container hover:bg-surface-container-low transition-colors duration-300">
+<span class="material-symbols-outlined text-primary text-3xl md:text-4xl mb-6" data-icon="history_edu">history_edu</span>
+<h3 class="font-headline text-ink mb-4 text-lg md:text-xl">Heritage Preservation</h3>
+<p class="font-body text-on-surface-variant leading-relaxed text-sm md:text-base">
+                            We act as stewards for rare and endangered botanical lineages, ensuring that botanical history is preserved for future generations to study and admire.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Sustainability Credentials -->
+<section class="bg-secondary-container py-20 md:py-24 relative overflow-hidden">
+<div class="max-w-screen-2xl mx-auto px-8 md:px-16 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
+<div class="relative">
+<div class="aspect-square rounded-2xl overflow-hidden editorial-shadow transition-transform duration-700 transform hover:rotate-0 -rotate-3">
+<img alt="Close up of leaves" class="w-full h-full object-cover" data-alt="macro photograph of vibrant green leaves with dew drops, extremely shallow depth of field, bright ethereal lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLX-S0oH1qOv_jD-t0AWaHri4avK537xevpsCnPbmFHXLA5IrULV7p9YSvw8phFXRpKw5uBSvxn-O3CoeZcaFbgrRu61ejCxN4lfqIM0RlznMNhJE8KHbDQvywyin5UONXpCHa_uPGn7of_Ihu1D-34lDW63n6Bjg2poWfMT9cH9cmOpauLc_TiLfzRvcKZPqL4MFoqB1cl_dhtB2WoGouMCWUfsczOYWa8UZEEkCq94kix6YUGFR7WC3hvTGiGNaXsznc6rr_JhhL"/>
+</div>
+<div class="absolute -top-6 -left-6 bg-primary p-6 md:p-8 rounded-xl editorial-shadow text-on-primary">
+<p class="font-headline text-3xl md:text-4xl italic">100%</p>
+<p class="font-label text-[10px] md:text-xs uppercase tracking-widest mt-1">Renewable Energy</p>
+</div>
+</div>
+<div class="space-y-8">
+<span class="font-label text-on-secondary-fixed-variant tracking-widest uppercase text-xs md:text-sm font-semibold">Climate Positive</span>
+<h2 class="font-headline text-ink leading-tight text-3xl md:text-4xl">Commitment beyond the Leaf.</h2>
+<p class="font-body text-on-secondary-fixed-variant leading-relaxed text-sm md:text-base">
+                            Sustainability isn't a department at Bloomkubes; it's our foundational pulse. Our facilities operate on a zero-waste closed-loop system, where water is purified and recycled, and every organic byproduct is returned to the earth as nutrient-rich compost.
+                        </p>
+<div class="grid grid-cols-2 gap-8 pt-4">
+<div>
+<h4 class="font-headline text-2xl md:text-3xl text-primary italic mb-2">92%</h4>
+<p class="font-label text-xs md:text-sm text-ink opacity-70">Reduction in water usage compared to traditional methods.</p>
+</div>
+<div>
+<h4 class="font-headline text-2xl md:text-3xl text-primary italic mb-2">Carbon</h4>
+<p class="font-label text-xs md:text-sm text-ink opacity-70">Negative operations across all logistical channels by 2026.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#6B9E82] dark:bg-[#344c3d] text-[#fef9f1] w-full pt-16 pb-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 md:px-16 w-full max-w-screen-2xl mx-auto">
+<div class="space-y-6">
+<div class="font-['Newsreader'] text-2xl md:text-3xl italic text-[#fef9f1]">Bloomkubes</div>
+<p class="font-['Manrope'] text-sm tracking-wide leading-relaxed text-[#fef9f1]/70">
+                    Curating the intersection of high-design and sustainable horticulture.
+                </p>
+<div class="flex gap-4">
+<a class="text-[#fef9f1]/70 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-[#fef9f1]/70 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">potted_plant</span></a>
+<a class="text-[#fef9f1]/70 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">menu_book</span></a>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="font-['Manrope'] text-sm font-bold uppercase tracking-[0.2em]">About Us</h4>
+<ul class="space-y-4 font-['Manrope'] text-sm">
+<li><a class="text-[#fef9f1]/70 hover:text-white underline decoration-[#c0c9c1] underline-offset-4 transition-all" href="#">Our Story</a></li>
+<li><a class="text-[#fef9f1]/70 hover:text-white underline decoration-[#c0c9c1] underline-offset-4 transition-all" href="#">Design Philosophy</a></li>
+<li><a class="text-[#fef9f1]/70 hover:text-white underline decoration-[#c0c9c1] underline-offset-4 transition-all" href="#">Sustainability</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-['Manrope'] text-sm font-bold uppercase tracking-[0.2em]">Quick Links</h4>
+<ul class="space-y-4 font-['Manrope'] text-sm">
+<li><a class="text-[#fef9f1]/70 hover:text-white underline decoration-[#c0c9c1] underline-offset-4 transition-all" href="#">The Kubes</a></li>
+<li><a class="text-[#fef9f1]/70 hover:text-white underline decoration-[#c0c9c1] underline-offset-4 transition-all" href="#">Gallery</a></li>
+<li><a class="text-[#fef9f1]/70 hover:text-white underline decoration-[#c0c9c1] underline-offset-4 transition-all" href="#">Maintenance</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-['Manrope'] text-sm font-bold uppercase tracking-[0.2em]">Subscribe</h4>
+<p class="font-['Manrope'] text-sm text-[#fef9f1]/70">Join our journal for seasonal updates and design inspiration.</p>
+<div class="flex">
+<input class="bg-[#fef9f1]/10 border-none rounded-l-lg focus:ring-0 placeholder-[#fef9f1]/40 text-white w-full h-11 px-4 text-sm" placeholder="Email" type="email"/>
+<button class="bg-[#fef9f1] text-[#36684f] px-4 rounded-r-lg hover:bg-[#ece8e0] transition-colors">
+<span class="material-symbols-outlined text-xl">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-16 pt-8 border-t border-[#fef9f1]/10 px-8 md:px-16 w-full max-w-screen-2xl mx-auto">
+<p class="font-['Manrope'] text-xs tracking-wide text-[#fef9f1]/50 text-center md:text-left">
+                © 2024 The Living Archive. All rights reserved.
+            </p>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gallery | Bloomkubes</title>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#344c3d",
+                    "primary-container": "#6b9e82",
+                    "secondary": "#4b6454",
+                    "secondary-fixed-dim": "#b1cdb9",
+                    "on-primary-container": "#003320",
+                    "on-tertiary-fixed-variant": "#215033",
+                    "on-error-container": "#93000a",
+                    "on-surface": "#1d1c17",
+                    "primary": "#36684f",
+                    "outline": "#717973",
+                    "on-surface-variant": "#414943",
+                    "inverse-on-surface": "#f5f0e8",
+                    "surface-container-low": "#f8f3eb",
+                    "surface-bright": "#fef9f1",
+                    "surface-container-highest": "#e7e2da",
+                    "error-container": "#ffdad6",
+                    "primary-fixed-dim": "#9dd2b4",
+                    "surface-container-high": "#ece8e0",
+                    "surface-container": "#f2ede5",
+                    "on-background": "#1d1c17",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed": "#00210e",
+                    "tertiary-fixed": "#bbefc7",
+                    "surface": "#fef9f1",
+                    "outline-variant": "#c0c9c1",
+                    "on-primary-fixed-variant": "#1d5038",
+                    "surface-variant": "#e7e2da",
+                    "on-secondary-fixed": "#072013",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#002113",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#9dd2b4",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-container": "#4f6858",
+                    "secondary-container": "#cae7d2",
+                    "surface-tint": "#36684f",
+                    "on-tertiary-container": "#00341a",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#ded9d2",
+                    "tertiary-fixed-dim": "#a0d2ac",
+                    "tertiary-container": "#6e9e7b",
+                    "inverse-surface": "#32302b",
+                    "secondary-fixed": "#cde9d5",
+                    "tertiary": "#3a6849",
+                    "background": "#fef9f1",
+                    "primary-fixed": "#b9efcf"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Deep Spatial Parallax Background */
+        body {
+            position: relative;
+            overflow-x: hidden;
+            perspective: 1000px;
+        }
+        .parallax-bg {
+            position: fixed;
+            top: -10%;
+            left: -10%;
+            width: 120%;
+            height: 120%;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(54, 104, 79, 0.03) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(75, 100, 84, 0.05) 0%, transparent 40%);
+            transform: translateZ(-200px) scale(1.5);
+            pointer-events: none;
+        }
+
+        /* Advanced 3D Tilt & Lift */
+        .perspective-hover {
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            transform-style: preserve-3d;
+            will-change: transform;
+        }
+        .perspective-hover:hover {
+            transform: perspective(1000px) rotateX(6deg) rotateY(-6deg) translateZ(30px);
+            box-shadow: 
+                20px 20px 60px rgba(0,0,0,0.05),
+                -10px -10px 40px rgba(255,255,255,0.8);
+        }
+        .perspective-hover .p-6 {
+            transform: translateZ(20px);
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .perspective-hover:hover .p-6 {
+            transform: translateZ(40px);
+        }
+
+        /* Masonry Grid Setup */
+        .masonry-grid {
+            columns: 1;
+            gap: 1.5rem;
+            perspective: 2000px;
+        }
+        @media (min-width: 768px) { .masonry-grid { columns: 2; } }
+        @media (min-width: 1024px) { .masonry-grid { columns: 3; } }
+        
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            transform: translateY(50px) rotateX(-15deg) translateZ(-100px);
+            animation: entranceReveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        }
+
+        /* Staggered Entrance Reveal */
+        @keyframes entranceReveal {
+            to {
+                opacity: 1;
+                transform: translateY(0) rotateX(0) translateZ(0);
+            }
+        }
+        .masonry-item:nth-child(1) { animation-delay: 0.1s; }
+        .masonry-item:nth-child(2) { animation-delay: 0.2s; }
+        .masonry-item:nth-child(3) { animation-delay: 0.3s; }
+        .masonry-item:nth-child(4) { animation-delay: 0.4s; }
+        .masonry-item:nth-child(5) { animation-delay: 0.5s; }
+        .masonry-item:nth-child(6) { animation-delay: 0.6s; }
+        .masonry-item:nth-child(7) { animation-delay: 0.7s; }
+        .masonry-item:nth-child(8) { animation-delay: 0.8s; }
+
+        /* Fluid 3D Perspective Transitions for Filtering */
+        .filter-transition {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .filter-transition:active {
+            transform: scale(0.95) translateZ(-10px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-fixed-variant">
+<div class="parallax-bg" id="parallax-bg"></div>
+<!-- TopNavBar -->
+<nav class="bg-transparent dark:bg-transparent transition-colors duration-300 backdrop-blur-md sticky top-0 w-full z-50 border-b border-[#c0c9c1]/20 transition-all duration-300" style="backdrop-filter: blur(12px);">
+<div class="flex justify-between items-center px-8 py-4 w-full max-w-screen-2xl mx-auto">
+<div class="font-['Newsreader'] text-xl lg:text-2xl font-bold text-[#4A3C32] dark:text-[#fef9f1]">Bloomkubes</div>
+<!-- Desktop Nav -->
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-[#4A3C32]/80 hover:text-[#36684f] transition-colors font-['Newsreader'] italic text-base lg:text-lg" href="#">Technology</a>
+<a class="text-[#4A3C32]/80 hover:text-[#36684f] transition-colors font-['Newsreader'] italic text-base lg:text-lg" href="#">About Us</a>
+<a class="text-[#4A3C32]/80 hover:text-[#36684f] transition-colors font-['Newsreader'] italic text-base lg:text-lg" href="#">Work with Us</a>
+</div>
+<button class="bg-primary text-on-primary px-5 py-2 rounded-md font-label font-medium hover:opacity-80 transition-opacity ease-out duration-200 text-xs">Contact Us</button>
+</div>
+</nav>
+<main class="max-w-screen-2xl mx-auto px-8 pt-16 pb-24 relative z-10">
+<!-- Header Section -->
+<header class="mb-16 max-w-3xl">
+<span class="font-label text-xs uppercase tracking-widest text-secondary font-bold mb-4 block">Archive Collection</span>
+<h1 class="font-headline text-4xl md:text-5xl lg:text-6xl text-on-surface leading-tight italic mb-6">Visual Notes on Living Architecture</h1>
+<p class="text-on-surface-variant text-base md:text-lg leading-relaxed font-light max-w-2xl">
+                Exploring the synergy between precise horticultural technology and the raw beauty of micro-biological growth. A documented journey of the Bloomkubes.
+            </p>
+</header>
+<!-- Filter Tabs -->
+<div class="flex flex-wrap gap-4 mb-12 border-b border-outline-variant/30 pb-6">
+<button class="filter-transition px-5 py-2 bg-primary text-on-primary rounded-full text-xs font-label font-semibold">All Specimens</button>
+<button class="filter-transition px-5 py-2 bg-secondary-container text-on-secondary-fixed-variant hover:bg-primary-container hover:text-on-primary rounded-full text-xs font-label">The Kubes</button>
+<button class="filter-transition px-5 py-2 bg-secondary-container text-on-secondary-fixed-variant hover:bg-primary-container hover:text-on-primary rounded-full text-xs font-label">Chef's Selection</button>
+<button class="filter-transition px-5 py-2 bg-secondary-container text-on-secondary-fixed-variant hover:bg-primary-container hover:text-on-primary rounded-full text-xs font-label">Microgreens</button>
+<button class="filter-transition px-5 py-2 bg-secondary-container text-on-secondary-fixed-variant hover:bg-primary-container hover:text-on-primary rounded-full text-xs font-label">Process</button>
+</div>
+<!-- Masonry Grid -->
+<div class="masonry-grid">
+<!-- Specimen 1 -->
+<div class="masonry-item group cursor-zoom-in">
+<div class="perspective-hover bg-surface-container-lowest rounded-lg overflow-hidden border border-outline-variant/10">
+<img alt="" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="Macro photography of vibrant purple microgreens in a futuristic minimalist growing tray with soft atmospheric studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuMl_XdzOoBLpDZvlLU-NRdiiM0CrbSqHYjU6A9JeynpTHuhrVz34QO32KtOAIxjpHnhTtjY3sewGxgEEAmBrmnvY2VWPZj81NMaZRIbjAd2Or_adSe3TOuC64OSAn9b-KtIHpFj26GTa4mCzgHl-bKRYQbpOCIiZPLk9NuP7z9k50Tu2u240VvjWjrewsE1p0rFqUCG2829Q-pWFsmdxVnq2g5vJQXMVyG9UGU5G_CYxvqDflUjt3JqoeLqEMS2r-efJRvImb0f0S"/>
+<div class="p-6">
+<span class="text-[10px] uppercase tracking-widest text-primary font-bold mb-2 block">Microgreens</span>
+<h3 class="font-headline italic text-lg text-on-surface">Amethyst Radish</h3>
+</div>
+</div>
+</div>
+<!-- Specimen 2 -->
+<div class="masonry-item group cursor-zoom-in">
+<div class="perspective-hover bg-surface-container-lowest rounded-lg overflow-hidden border border-outline-variant/10">
+<img alt="" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="Interior of a luxury professional kitchen with a chef delicately placing greens on a plate, warm focused lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiE9ZqISH6N3aI15lJEDaGYHv39c_2a5vFbi16ECd7h-vxqBAlPIJrrWh3b9Eah0bvSKgW6h5--le6PfQY1UCreXh_dBrQX-B_jCDqe5Af4c-lomRn0pTJegIp45PKRg4puiey-g3fnkQRiSSA6OzINEy_5hiAi116cenDDaRqEfZ3O1aLY_qyvqVL-jQjdFLhKrLGnGnjBVje0ruJyhqHIyZi2FNi_3regG93gtQSYs0bZJW0qdQSicmBgE-9fUx6X0qh4ONfGZvX"/>
+<div class="p-6">
+<span class="text-[10px] uppercase tracking-widest text-primary font-bold mb-2 block">For Chefs</span>
+<h3 class="font-headline italic text-lg text-on-surface">Plating Precision</h3>
+</div>
+</div>
+</div>
+<!-- Specimen 3 -->
+<div class="masonry-item group cursor-zoom-in">
+<div class="perspective-hover bg-surface-container-lowest rounded-lg overflow-hidden border border-outline-variant/10">
+<img alt="" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="Sleek glass and matte sage green hydroponic growing chamber standing in a modern high-end living space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDBgr5jUDnioLaF3ZEP8nnvxHB0HBN6qEh13VpGskjs6aukdf9o9DcKQBPu0H3W2L7iyZ09hmqpCQ1CdJCnDuEsP1pxS19-UA_fy78BH2HjbRI0Ul6eYISSz4jivOV7soKIrHzkdmIZO7Tu85Njx3lAhlh7FsC6pcpROCUPoN1pyhh3mTht5y4VJUgMuV9bHNwOPqI22guH7G_AmMTKczdK7pUGM86BSNknUXk0VrkWcH42sWLSH9j_Pih8LalRysPLyd6xbjy6CTG"/>
+<div class="p-6">
+<span class="text-[10px] uppercase tracking-widest text-primary font-bold mb-2 block">The Kubes</span>
+<h3 class="font-headline italic text-lg text-on-surface">Kube Series 04</h3>
+</div>
+</div>
+</div>
+<!-- Specimen 4 -->
+<div class="masonry-item group cursor-zoom-in">
+<div class="perspective-hover bg-surface-container-lowest rounded-lg overflow-hidden border border-outline-variant/10">
+<img alt="" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="Dense rows of emerald green sprouts growing in a controlled environment, soft morning sunlight through a window" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzB6GVTJ4JoEdTCCg44f_WcEWNmYTf8PvuMWepAfNNbOVYHSr3MwY0tWOOh8S1PbCDOFzT6vq3_a0pG8W61LHuDln0HzafmWELxBk3DdftHYHYJhxd4X4hiksAZFLIfgP6I-f6FTOuEjapwqH7p4gCjd5RaNEzgV4PNtYYuetFcU8yYQJ7tE4eNkT2uC3eUB-b4n9JUwdSTIYTjdAIDBg5_51_TyQBdta1MVUTIRaZQIxRDwyx2fhAM5DNjEFrLZnu4v71RoAjf9Rn"/>
+<div class="p-6">
+<span class="text-[10px] uppercase tracking-widest text-primary font-bold mb-2 block">Sustainability</span>
+<h3 class="font-headline italic text-lg text-on-surface">The Cycle of Life</h3>
+</div>
+</div>
+</div>
+<!-- Specimen 5 -->
+<div class="masonry-item group cursor-zoom-in">
+<div class="perspective-hover bg-surface-container-lowest rounded-lg overflow-hidden border border-outline-variant/10">
+<img alt="" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="Close up of a chef's hands picking delicate herbs with tweezers in a dark atmospheric kitchen setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDn4uMtHOzcVIc12pFaov9vmnCCv3-0uMazbMwtejLwoWhT0B74z20yjyx_CIhSMmJqYDppkIePECnRKMyYDTX9ZY3JymR1xQwisiylxQlSsEgKS8m_75dlxRRdEdnQdVBvlIgYn5H6P-HxKYsyosFRY8qacmxNyUsWH5NhSP8yN_6If0iM2mmzE-vTmLG_hH_Jx5VLRbTNcBK0gUo3Ozt9mb1s5C_CjO--jVRWwdbpCNDkMTXlaELYceSmSykr9LAhmYjoD2HDknPr"/>
+<div class="p-6">
+<span class="text-[10px] uppercase tracking-widest text-primary font-bold mb-2 block">For Chefs</span>
+<h3 class="font-headline italic text-lg text-on-surface">Tasting Notes</h3>
+</div>
+</div>
+</div>
+<!-- Specimen 6 -->
+<div class="masonry-item group cursor-zoom-in">
+<div class="perspective-hover bg-surface-container-lowest rounded-lg overflow-hidden border border-outline-variant/10">
+<img alt="" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="A minimalist tech interface integrated into a wooden wall controlling plant growth parameters with soft blue backlighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCso2_ZUwtuxKTCuCL5McWDwL6e8J521Z7DrYMeAHUVnJE7YGhXhTuJwMP9sUN2GgaOBrHG0lJAM3nfJquNql5MKOKc1JHgH0wxPxXjJRtLZRkokt8ndRtXw3Qz_NxCtq2xi5JraYdLPpe6A7wCuI6okd34NpcFxpPr0tzIaoiw35ndValbmB-XeAfkEUqzKVI3ped1m9DbM1wuXZFiQIvonvAoXwOCAt7UQ1Ovg5-9lww0EpH4HnOs9YgWysOkmWAJ3E0g6jRNSigE"/>
+<div class="p-6">
+<span class="text-[10px] uppercase tracking-widest text-primary font-bold mb-2 block">Technology</span>
+<h3 class="font-headline italic text-lg text-on-surface">Precision Control</h3>
+</div>
+</div>
+</div>
+<!-- Specimen 7 -->
+<div class="masonry-item group cursor-zoom-in">
+<div class="perspective-hover bg-surface-container-lowest rounded-lg overflow-hidden border border-outline-variant/10">
+<img alt="" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="Abstract view of misty botanical garden leaves through condensation-covered glass, soft ethereal mood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDo7TvOqKBwxdtIonVu-x6rCuwZAMO7KM91-CTsdFOJ73TnE7vn8HQGXqNDiU0-_EguiNuF9_tz-NSCKORumkHDSVm0OjRyuEAzSHNe_yjvKcVIY2rAHpDF01ns9AVicOcf2-UaPWcVZ8fy3X8-WhtA8zSm4BDyuxrsZhjLOF-jT2XXgBzlk5K-lLNSyi3bkFQNCQkTl7DADb6mUNewreCD515QUoC2thkYlf06VP48I-V0vJyOWBIiwvB1iwDAbp8K-PdzvWDhYHYD"/>
+<div class="p-6">
+<span class="text-[10px] uppercase tracking-widest text-primary font-bold mb-2 block">Atmosphere</span>
+<h3 class="font-headline italic text-lg text-on-surface">Morning Mist</h3>
+</div>
+</div>
+</div>
+<!-- Specimen 8 -->
+<div class="masonry-item group cursor-zoom-in">
+<div class="perspective-hover bg-surface-container-lowest rounded-lg overflow-hidden border border-outline-variant/10">
+<img alt="" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="Close up of diverse microgreen seedlings in a dark substrate, highlighting different textures and shades of green" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfGhxvt3Spd1ij_G6riZVsb6o2xnTDHxf5RQNKJ7BRRFm3HuIzTFo4Bw8aiJlwZdXBOxlnWd9MC1dPbVlFPKdqQ_LEgWdnF7ioAGdWEDCALMc8hn8-U4UDZlFwzD2ufjMfvw5ysu0bQeqHYFaTNksu0nRBKJs3LEfV0iONeVn0LwmfB0IhHfPjgJQ5Dgeh_UecdeYWgbVspLR9a_UNYEYvraCR22iX7LhVA-szixJKdswWhE3XMwsfmJ7zZJ33P95fit8dNNwSbkYc"/>
+<div class="p-6">
+<span class="text-[10px] uppercase tracking-widest text-primary font-bold mb-2 block">Seedlings</span>
+<h3 class="font-headline italic text-lg text-on-surface">The Bloom Mix</h3>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination/Load More -->
+<div class="mt-20 flex justify-center">
+<button class="filter-transition group flex items-center gap-3 text-primary font-label font-bold text-base hover:gap-5">
+                Load more specimens
+                <span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#6B9E82] dark:bg-[#344c3d] w-full pt-16 pb-8 relative z-20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 md:px-16 w-full max-w-screen-2xl mx-auto">
+<div class="flex flex-col gap-6">
+<div class="font-['Newsreader'] text-2xl lg:text-3xl italic text-[#fef9f1]">Bloomkubes</div>
+<p class="font-['Manrope'] text-sm tracking-wide leading-relaxed text-[#fef9f1]/70">
+                    Cultivating the future of urban gastronomy through intelligent living archives.
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-[#ffffff] font-bold font-['Manrope'] uppercase text-[10px] tracking-widest mb-2">About Us</h4>
+<a class="text-[#fef9f1]/70 hover:text-white underline decoration-[#c0c9c1] underline-offset-4 font-['Manrope'] text-sm transition-all duration-200" href="#">Our Story</a>
+<a class="text-[#fef9f1]/70 hover:text-white underline decoration-[#c0c9c1] underline-offset-4 font-['Manrope'] text-sm transition-all duration-200" href="#">The Technology</a>
+<a class="text-[#fef9f1]/70 hover:text-white underline decoration-[#c0c9c1] underline-offset-4 font-['Manrope'] text-sm transition-all duration-200" href="#">Sustainability</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-[#ffffff] font-bold font-['Manrope'] uppercase text-[10px] tracking-widest mb-2">Quick Links</h4>
+<a class="text-[#fef9f1]/70 hover:text-white underline decoration-[#c0c9c1] underline-offset-4 font-['Manrope'] text-sm transition-all duration-200" href="#">Gallery</a>
+<a class="text-[#fef9f1]/70 hover:text-white underline decoration-[#c0c9c1] underline-offset-4 font-['Manrope'] text-sm transition-all duration-200" href="#">For Chefs</a>
+<a class="text-[#fef9f1]/70 hover:text-white underline decoration-[#c0c9c1] underline-offset-4 font-['Manrope'] text-sm transition-all duration-200" href="#">The Kubes</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-[#ffffff] font-bold font-['Manrope'] uppercase text-[10px] tracking-widest mb-2">Newsletter</h4>
+<div class="relative">
+<input class="bg-[#fef9f1]/10 border-b border-[#fef9f1]/30 text-white placeholder:text-white/50 w-full py-2 text-sm focus:outline-none focus:border-white transition-all" placeholder="Email Address" type="email"/>
+<button class="absolute right-0 top-1/2 -translate-y-1/2 text-white">
+<span class="material-symbols-outlined text-sm">north_east</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-16 px-8 md:px-16 w-full max-w-screen-2xl mx-auto border-t border-[#fef9f1]/10 pt-8">
+<p class="font-['Manrope'] text-xs tracking-wide text-[#fef9f1]/70">© 2024 The Living Archive. All rights reserved.</p>
+</div>
+</footer>
+<!-- Lightbox Placeholder -->
+<div class="hidden fixed inset-0 z-[100] bg-on-surface/95 flex items-center justify-center p-8 backdrop-blur-md" id="lightbox">
+<button class="absolute top-8 right-8 text-white hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-4xl">close</span>
+</button>
+<div class="max-w-5xl w-full h-full flex flex-col items-center justify-center gap-8">
+<img alt="" class="max-h-[819px] w-auto object-contain rounded-lg shadow-2xl" data-alt="high resolution specimen detail" src=""/>
+<div class="text-center">
+<h2 class="font-headline text-2xl md:text-3xl italic text-white mb-2">Specimen Name</h2>
+<p class="text-white/70 font-label uppercase tracking-widest text-xs">Microgreen Detail • 2024 Collection</p>
+</div>
+</div>
+</div>
+<script>
+        // Parallax Effect
+        window.addEventListener('mousemove', (e) => {
+            const bg = document.getElementById('parallax-bg');
+            const x = (window.innerWidth / 2 - e.pageX) / 40;
+            const y = (window.innerHeight / 2 - e.pageY) / 40;
+            bg.style.transform = `translateZ(-200px) scale(1.5) translate(${x}px, ${y}px)`;
+        });
+
+        // Interactive 3D tilt tracking for grid items
+        document.querySelectorAll('.perspective-hover').forEach(item => {
+            item.addEventListener('mousemove', (e) => {
+                const rect = item.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / 15;
+                const rotateY = (centerX - x) / 15;
+                
+                item.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(30px)`;
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)`;
+            });
+        });
+    </script>
+</body></html>

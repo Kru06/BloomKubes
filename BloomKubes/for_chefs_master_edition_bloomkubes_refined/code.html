@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>For Chefs | Bloomkubes</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Newsreader (Editorial Serif), Manrope (Humanist Sans) -->
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,700&amp;family=Manrope:wght@300;400;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#344c3d",
+                    "primary-container": "#6b9e82",
+                    "secondary": "#4b6454",
+                    "secondary-fixed-dim": "#b1cdb9",
+                    "on-primary-container": "#003320",
+                    "on-tertiary-fixed-variant": "#215033",
+                    "on-error-container": "#93000a",
+                    "on-surface": "#1d1c17",
+                    "primary": "#36684f",
+                    "outline": "#717973",
+                    "on-surface-variant": "#414943",
+                    "inverse-on-surface": "#f5f0e8",
+                    "surface-container-low": "#f8f3eb",
+                    "surface-bright": "#fef9f1",
+                    "surface-container-highest": "#e7e2da",
+                    "error-container": "#ffdad6",
+                    "primary-fixed-dim": "#9dd2b4",
+                    "surface-container-high": "#ece8e0",
+                    "surface-container": "#f2ede5",
+                    "on-background": "#1d1c17",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed": "#00210e",
+                    "tertiary-fixed": "#bbefc7",
+                    "surface": "#fef9f1",
+                    "outline-variant": "#c0c9c1",
+                    "on-primary-fixed-variant": "#1d5038",
+                    "surface-variant": "#e7e2da",
+                    "on-secondary-fixed": "#072013",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#002113",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#9dd2b4",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-container": "#4f6858",
+                    "secondary-container": "#cae7d2",
+                    "surface-tint": "#36684f",
+                    "on-tertiary-container": "#00341a",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#ded9d2",
+                    "tertiary-fixed-dim": "#a0d2ac",
+                    "tertiary-container": "#6e9e7b",
+                    "inverse-surface": "#32302b",
+                    "secondary-fixed": "#cde9d5",
+                    "tertiary": "#3a6849",
+                    "background": "#fef9f1",
+                    "primary-fixed": "#b9efcf"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "1rem",
+                    "xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader", "serif"],
+                    "body": ["Manrope", "sans-serif"],
+                    "label": ["Manrope", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .asymmetric-layout {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+        }
+        .text-ink { color: #4A3C32; }
+        .bg-linen { background-color: #fef9f1; }
+    </style>
+</head>
+<body class="bg-linen font-body text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar Section -->
+<header class="bg-transparent dark:bg-transparent transition-colors duration-300 backdrop-blur-md sticky top-0 w-full z-50 border-b border-[#c0c9c1]/20 bg-white/80" style="backdrop-filter: blur(12px);">
+<nav class="flex justify-between items-center px-8 py-4 w-full max-w-screen-2xl mx-auto">
+<div class="font-['Newsreader'] text-2xl font-bold text-[#4A3C32] dark:text-[#fef9f1]">
+                Bloomkubes
+            </div>
+<!-- Desktop Navigation -->
+<div class="hidden md:flex items-center space-x-8 font-['Newsreader'] italic text-lg lg:text-xl"><a class="text-[#4A3C32]/80 hover:text-[#36684f] transition-colors" href="#">Technology</a><a class="text-[#4A3C32]/80 hover:text-[#36684f] transition-colors" href="#">About Us</a><a class="text-[#4A3C32]/80 hover:text-[#36684f] transition-colors" href="#">Work with Us</a></div>
+<a class="bg-primary text-on-primary px-6 py-2 rounded-md font-label text-[11px] uppercase tracking-widest hover:opacity-80 transition-opacity" href="#">Contact Us</a>
+</nav>
+</header>
+<main>
+<!-- Hero Section: Editorial Intro -->
+<section class="relative min-h-[819px] flex items-center px-8 md:px-24 overflow-hidden">
+<div class="max-w-4xl z-10">
+<span class="font-label uppercase tracking-[0.2em] text-primary text-sm mb-4 block">The Culinary Frontier</span>
+<h1 class="font-headline italic text-ink leading-none mb-8 text-[3rem]">
+                    Hyper-local. <br/>
+<span class="pl-12 md:pl-24">Kitchen-grown.</span>
+</h1>
+<p class="font-body text-on-surface-variant max-w-xl leading-relaxed mb-10 text-[13px]">
+                    Bloomkubes allows Michelin-star standards to thrive inside your service line. Harvest micro-greens, rare herbs, and edible flowers seconds before they hit the plate.
+                </p>
+<div class="flex gap-4">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-md font-label font-bold hover:scale-[1.02] transition-transform flex items-center gap-2 text-[11px]">
+                        Enquire for Your Restaurant
+                        <span class="material-symbols-outlined" data-icon="arrow_right_alt">arrow_right_alt</span>
+</button>
+</div>
+</div>
+<!-- Asymmetric Hero Image -->
+<div class="absolute -right-20 top-1/2 -translate-y-1/2 w-1/2 h-[90%] rounded-l-full overflow-hidden hidden lg:block opacity-90 shadow-2xl">
+<img alt="professional chef carefully harvesting microgreens from a sleek modern hydroponic cube in a high-end restaurant kitchen" class="w-full h-full object-cover" data-alt="professional chef carefully harvesting microgreens from a sleek modern hydroponic cube in a high-end restaurant kitchen with warm moody lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdyw-kyx69m9wEiQ3EGDAVoOD_s5V_yjG1b_SGVM6XDF7xA4dCVgP-RXR5B_PSU1WoKE-bhulqCnw-i3cD_7W06MbS1Bo25ioYo8NkXvcrtCsJPCav9S7ZgvjSICWrIh7bdDbjFIofLO61GovwkYM2PmUjNpLnT1LsZ7cEXPfeFpfkpThYGaUoLNEqTP7971DHVj7SIvlSTvNuJJ0oc_qsWknZ-d8Lp-_gq0PIdTzTMwttObIXlQpBFw0eMyeR1AaQ-EIiWSjfIRXE"/>
+</div>
+</section>
+<!-- Bento Grid: Why Chefs Choose Bloomkubes -->
+<section class="bg-surface-container py-24 px-8 md:px-24">
+<div class="max-w-screen-2xl mx-auto">
+<div class="mb-16">
+<h2 class="font-headline text-ink italic mb-4 text-[1.9rem]">Why Chefs Choose Bloomkubes</h2>
+<div class="h-1 w-24 bg-primary"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 h-auto">
+<!-- Feature 1: Potency -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-xl p-10 flex flex-col justify-between group">
+<div class="flex justify-between items-start">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-6" data-icon="psychology">psychology</span>
+<h3 class="font-headline text-ink mb-4 text-[1.1rem]">Unrivaled Flavor Potency</h3>
+<p class="font-body text-on-surface-variant max-w-lg leading-relaxed text-[13px]">
+                                    Eliminate the flavor degradation of transport. Bloomkubes provide plants at their peak physiological maturity, ensuring volatile oils and aromas are at 100% when served.
+                                </p>
+</div>
+<div class="hidden md:block w-48 h-48 rounded-lg overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
+<img class="w-full h-full object-cover" data-alt="vibrant fresh basil leaves with water droplets close up high resolution botanical detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzRJeRI_k-oXh5LUhuzGy-reHzV3IThJ1lw6b10mdgB0JtqpLnC0T-DDbjX6wYM811k6ooG9X7JMjIR3Jk_xwF9a4NNqtRqYCtoEnKnla4vffv5deL8L52gPW1lBOF7M38jTw7mZ408BipnqQVoKHVLin5Yc1CsIhGv8fxljuXDTWfUEpUm1-788aPXxFzl2YJfyFNZ_S9UbKNX3uV52kUAXnFrh-SUf2InCTFnHcpyu1fstSJHWTrbB5xukDtqHS4jaXC_-7YNaKw"/>
+</div>
+</div>
+</div>
+<!-- Feature 2: Waste -->
+<div class="md:col-span-4 bg-primary text-on-primary rounded-xl p-10 flex flex-col justify-end">
+<span class="material-symbols-outlined text-4xl mb-6" data-icon="eco">eco</span>
+<h3 class="font-headline mb-4 text-[1.1rem]">Zero Supply Waste</h3>
+<p class="font-body text-primary-fixed opacity-90 leading-relaxed text-[13px]">
+                            Stop throwing away wilted plastic clamshells. Grow only what your menu demands, reducing your botanical waste by 95%.
+                        </p>
+</div>
+<!-- Feature 3: Rarities -->
+<div class="md:col-span-4 bg-secondary-container rounded-xl p-10">
+<span class="material-symbols-outlined text-on-secondary-fixed-variant text-4xl mb-6" data-icon="restaurant_menu">restaurant_menu</span>
+<h3 class="font-headline text-on-secondary-fixed-variant mb-4 text-[1.1rem]">Grow the Impossible</h3>
+<p class="font-body text-on-secondary-fixed-variant leading-relaxed text-[13px]">
+                            Source seeds for heritage varieties unavailable through traditional wholesalers. Customize your flavor profiles.
+                        </p>
+</div>
+<!-- Feature 4: Logistics -->
+<div class="md:col-span-8 bg-surface-container-highest rounded-xl p-10 overflow-hidden relative">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-primary text-4xl mb-6" data-icon="architecture">architecture</span>
+<h3 class="font-headline text-ink mb-4 text-[1.1rem]">Kitchen-Fit Engineering</h3>
+<p class="font-body text-on-surface-variant max-w-md leading-relaxed text-[13px]">
+                                Modular designs that stack seamlessly into existing prep lines or bar setups. Plumbed or reservoir-based, Bloomkubes adapt to your space.
+                            </p>
+</div>
+<div class="absolute -bottom-10 -right-10 opacity-20 transform rotate-12">
+<span class="material-symbols-outlined text-[12rem]" data-icon="settings_input_component">settings_input_component</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Feature List Section -->
+<section class="py-24 px-8 md:px-24 max-w-screen-2xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div>
+<h2 class="font-headline text-ink italic mb-12 text-[1.9rem]">Precision Horticulture</h2>
+<ul class="space-y-8">
+<li class="flex items-start gap-6">
+<div class="bg-secondary-container p-3 rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="light_mode">light_mode</span>
+</div>
+<div>
+<h4 class="font-bold text-ink mb-1 uppercase tracking-wider text-xs">Dynamic Spectrum Lighting</h4>
+<p class="text-on-surface-variant leading-relaxed">Custom light recipes for each variety to enhance color, leaf size, and nutritional density.</p>
+</div>
+</li>
+<li class="flex items-start gap-6">
+<div class="bg-secondary-container p-3 rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="water_drop">water_drop</span>
+</div>
+<div>
+<h4 class="font-bold text-ink mb-1 uppercase tracking-wider text-xs">Automated Nutrient Delivery</h4>
+<p class="text-on-surface-variant leading-relaxed">Sensors track pH and EC levels in real-time, ensuring optimal growth with zero manual intervention.</p>
+</div>
+</li>
+<li class="flex items-start gap-6">
+<div class="bg-secondary-container p-3 rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="connected_tv">connected_tv</span>
+</div>
+<div>
+<h4 class="font-bold text-ink mb-1 uppercase tracking-wider text-xs">Chef-Control App</h4>
+<p class="text-on-surface-variant leading-relaxed">Monitor your harvest dates and environmental stats from your phone while managing service.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<img class="rounded-xl aspect-[3/4] object-cover mt-12" data-alt="extreme close up of vibrant purple edible flowers with morning dew in a botanical lab setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpf6ykpw7VZKejN2UrU5Kh2GmoFNF3xykasMU1RWwgbsz1s8cpEKcd4m1_05cKC_c5wwmgsCc9naIVZ548LqqjSmWtxUlQRYdX00gYJiV0GaIzq4BFw1OAeC6tJmt8q4qebbAX_p99c3T5JuVpRgg501NG4ixQOzcO7Kra34kcFkP22N21YaU7ApwwTDuHyF6nJ2QtzC_usWVL75v2d_Jc8NbpUQqg_TLGfMeu-7kTHFZ4KpBIAlmRIs6pDUxiIBIXF5YKfyTc1ALh"/>
+<img class="rounded-xl aspect-[3/4] object-cover" data-alt="minimalist aesthetic of glass bottles and fresh green herbs on a linen surface with soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKVVF-iQac58tiV5r0vt-Cj7wJIN9AhMyS-NQQ934cunCwj9WhNfSdyU1DpLwpzZMFJvpRka807-hJXLbzO8wI9hzHLSV-uedORUmIHaepoE8u_cwqTktsbtuC6lQlQts6inHlo3nfm-2WcGD-q6pZJVTe36iS0cfaXMu1aAa9qmBVMOerf3cmpD6zGxShBpUn7bjgS8wSzKUnxuqOmnJ_3-z_IIE77nTBAAmhvjxmita_pTIXhbUR-IupBuuljWOSPzhLMUSkDCXX"/>
+</div>
+</div>
+</section>
+<!-- 3-Step Integration Guide -->
+<section class="bg-surface-container-low py-24 px-8 md:px-24">
+<div class="max-w-4xl mx-auto text-center mb-16">
+<h2 class="font-headline text-ink italic mb-6 text-[1.9rem]">Seamless Kitchen Integration</h2>
+<p class="font-body text-on-surface-variant text-[13px]">We don't just sell equipment; we partner with your culinary team.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-screen-2xl mx-auto">
+<div class="relative group">
+<div class="font-label font-bold text-primary mb-2 text-xl">01</div>
+<div class="relative z-10">
+<h3 class="font-headline text-ink mb-4 text-xl">Consultation &amp; Design</h3>
+<p class="text-on-surface-variant leading-relaxed">Our specialists analyze your menu and kitchen floorplan to determine the ideal Kube configuration and plant palette.</p>
+</div>
+</div>
+<div class="relative">
+<div class="font-label font-bold text-primary mb-2 text-xl">02</div>
+<div class="relative z-10">
+<h3 class="font-headline text-ink mb-4 text-xl">White-Glove Setup</h3>
+<p class="text-on-surface-variant leading-relaxed">We handle the plumbing, electrical, and initial seeding. Your team receives hands-on training for harvesting and system management.</p>
+</div>
+</div>
+<div class="relative">
+<div class="font-label font-bold text-primary mb-2 text-xl">03</div>
+<div class="relative z-10">
+<h3 class="font-headline text-ink mb-4 text-xl">Continuous Curation</h3>
+<p class="text-on-surface-variant leading-relaxed">Access our seed library for seasonal swaps and receive technical support 24/7 to ensure your harvest never fails.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-24 px-8">
+<div class="max-w-5xl mx-auto bg-primary rounded-xl overflow-hidden flex flex-col md:flex-row items-center">
+<div class="p-12 md:w-2/3 text-on-primary">
+<h2 class="font-headline mb-6 italic italic text-[1.9rem]">Elevate Your Menu Standards</h2>
+<p class="font-body text-primary-fixed opacity-90 mb-10 text-[13px]">Join the world's leading culinary innovators and take full control of your plant-based components.</p>
+<button class="bg-surface-bright text-primary px-8 py-4 rounded-md font-label font-bold uppercase tracking-widest hover:bg-secondary-container transition-colors text-[11px]">
+                        Enquire for Your Restaurant
+                    </button>
+</div>
+<div class="md:w-1/3 h-full">
+<img class="w-full h-full object-cover min-h-[300px]" data-alt="professional chef arranging delicate garnishes with tweezers in a brightly lit clean commercial kitchen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMioo-guQwnh58OKvMTpndH8WmnkO_ZPqED2NUNkTeh3oFXb2vA2C3lgshRuqqg2TMxkO0cch_PhOGhkZ4TUrR1SyIYOXPvAkasd0bQvwfjMsNkIDPKyo-knPOdonQXpsmCXuWpigmmbhTE7wopGIQAPuIzmxtEORBoLbYnKd00lBH8lIkTYWFhbmE6_FHe4vLMLVTv5uPa4DIBL3m3gVFGy2uqxKbJfMQbRn1i_0NM9IS0lXCBkG0UuFHC5eAEsHAxvjwH7Bb_IGB"/>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Section -->
+<footer class="bg-[#6B9E82] dark:bg-[#344c3d] text-[#fef9f1] w-full pt-16 pb-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 md:px-16 w-full max-w-screen-2xl mx-auto">
+<div class="space-y-6">
+<div class="font-['Newsreader'] text-2xl md:text-3xl italic text-[#fef9f1]">Bloomkubes</div>
+<p class="font-['Manrope'] text-sm tracking-wide leading-relaxed text-[#fef9f1]/70">
+                    Curating the intersection of high-design and sustainable horticulture.
+                </p>
+<div class="flex gap-4">
+<a class="text-[#fef9f1]/70 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-[#fef9f1]/70 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">potted_plant</span></a>
+<a class="text-[#fef9f1]/70 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">menu_book</span></a>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="font-['Manrope'] text-sm font-bold uppercase tracking-[0.2em]">About Us</h4>
+<ul class="space-y-4 font-['Manrope'] text-sm">
+<li><a class="text-[#fef9f1]/70 hover:text-white underline decoration-[#c0c9c1] underline-offset-4 transition-all" href="#">Our Story</a></li>
+<li><a class="text-[#fef9f1]/70 hover:text-white underline decoration-[#c0c9c1] underline-offset-4 transition-all" href="#">Design Philosophy</a></li>
+<li><a class="text-[#fef9f1]/70 hover:text-white underline decoration-[#c0c9c1] underline-offset-4 transition-all" href="#">Sustainability</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-['Manrope'] text-sm font-bold uppercase tracking-[0.2em]">Quick Links</h4>
+<ul class="space-y-4 font-['Manrope'] text-sm">
+<li><a class="text-[#fef9f1]/70 hover:text-white underline decoration-[#c0c9c1] underline-offset-4 transition-all" href="#">The Kubes</a></li>
+<li><a class="text-[#fef9f1]/70 hover:text-white underline decoration-[#c0c9c1] underline-offset-4 transition-all" href="#">Gallery</a></li>
+<li><a class="text-[#fef9f1]/70 hover:text-white underline decoration-[#c0c9c1] underline-offset-4 transition-all" href="#">Maintenance</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-['Manrope'] text-sm font-bold uppercase tracking-[0.2em]">Subscribe</h4>
+<p class="font-['Manrope'] text-sm text-[#fef9f1]/70">Join our journal for seasonal updates and design inspiration.</p>
+<div class="flex">
+<input class="bg-[#fef9f1]/10 border-none rounded-l-lg focus:ring-0 placeholder-[#fef9f1]/40 text-white w-full h-11 px-4 text-sm" placeholder="Email" type="email"/>
+<button class="bg-[#fef9f1] text-[#36684f] px-4 rounded-r-lg hover:bg-[#ece8e0] transition-colors">
+<span class="material-symbols-outlined text-xl">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-16 pt-8 border-t border-[#fef9f1]/10 px-8 md:px-16 w-full max-w-screen-2xl mx-auto">
+<p class="font-['Manrope'] text-xs tracking-wide text-[#fef9f1]/50 text-center md:text-left">
+                © 2024 The Living Archive. All rights reserved.
+            </p>
+</div>
+</footer>
+</body></html>
